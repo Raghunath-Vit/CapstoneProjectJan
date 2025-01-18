@@ -1,0 +1,94 @@
+<div class="tabs">
+  <button 
+    class="tab-button" 
+    [class.active]="currentTab === 'filter'" 
+    (click)="switchTab('filter')">
+    Filter/Search Meeting
+  </button>
+  <button 
+    class="tab-button" 
+    [class.active]="currentTab === 'add'" 
+    (click)="switchTab('add')">
+    Add a Meeting
+  </button>
+
+  <div class="logout-container" (click)="logoutUser()">
+    <button class="logout-button">
+      <fa-icon [icon]="faCircleUser"></fa-icon>
+      <span class="tooltip">Logout</span>
+    </button>
+
+    <!-- Dropdown menu -->
+    <!-- <div class="dropdown" *ngIf="dropdownVisible">
+      <button class="dropdown-item" (click)="logoutUser()">Logout</button>
+    </div> -->
+  </div>
+</div>
+  <div class="tab-content">
+    <ng-container *ngIf="currentTab === 'filter'">
+      <div class="filter-container">
+        <h2 style="color: white;">Search / Filter Meetings</h2>
+        <div class="filter-section">
+          <label style="color: white;" for="filter">Filter by:</label>
+          <select id="filter" [(ngModel)]="selectedFilter" (change)="onFilterChange()">
+            <option *ngFor="let option of filterOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+          <input
+            id="search"
+            type="text"
+            placeholder="Search by description..."
+            [(ngModel)]="searchTerm"
+            (input)="onSearchChange()"
+          />
+        </div>
+  
+        <div class="meetings-list">
+          <div *ngFor="let meeting of meetings" class="meeting-card">
+            <h3 class="meeting-title">{{ meeting.name }}</h3>
+            <p class="meeting-description">{{ meeting.description }}</p>
+            <p class="meeting-date">
+              <strong>Date:</strong> 
+              {{ meeting.date | date: 'dd/MM/yyyy' }}
+            </p>
+            <p><strong>Start Time:</strong> {{ meeting.startTime.hours }}:{{ meeting.startTime.minutes }}</p>
+            <p><strong>End Time:</strong> {{ meeting.endTime.hours }}:{{ meeting.endTime.minutes }}</p>
+            <div class="action-buttons">
+              <button class="btn leave-btn" (click)="leaveMeeting(meeting.id)">
+                Leave Meeting
+              </button>
+              <button class="btn add-btn" (click)="toggleAddAttendee(meeting.id)">
+                Add Attendee
+              </button>
+              <div *ngIf="meeting.showInput" class="attendee-input-container">
+                <input
+                  [(ngModel)]="meeting.attendeeEmail"
+                  placeholder="Enter attendee email"
+                  (input)="onEmailInput(meeting.id)"
+                />
+                <ul *ngIf="filteredEmails.length > 0" class="suggestions-list">
+                  <li *ngFor="let email of filteredEmails" (click)="selectEmail(meeting.id, email)">
+                    {{ email }}
+                  </li>
+                </ul>
+                <button
+                  class="btn confirm-btn"
+                  (click)="addAttendee(meeting.id, meeting.attendeeEmail )"
+                >
+                  Confirm
+                </button>
+                <button class="btn cancel-btn" (click)="cancelAddAttendee(meeting.id)">
+                  Close
+                </button>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+  <ng-container *ngIf="currentTab === 'add'">
+    <app-add-meeting></app-add-meeting>
+  </ng-container>
+</div>

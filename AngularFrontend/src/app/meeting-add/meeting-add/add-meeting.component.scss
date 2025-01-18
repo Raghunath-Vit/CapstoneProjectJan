@@ -1,0 +1,442 @@
+.add-meeting {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; // Light background for the form
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+
+  h2 {
+    text-align: center;
+    color: #6a1b9a; // Primary color
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    animation: slideIn 1s ease-out;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #333;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #6a1b9a; // Highlight on hover
+        }
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+          border-color: #6a1b9a; // Highlight on focus
+          box-shadow: 0 0 5px rgba(106, 27, 154, 0.2);
+        }
+
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+
+      textarea {
+        resize: none;
+        min-height: 80px;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      max-height: 150px; // Set maximum height
+      overflow-y: auto; // Enable scrolling
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 8px;
+      margin-top: 8px;
+      background: #fafafa;
+      transition: max-height 0.3s ease, background-color 0.3s;
+
+      li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .selected-attendees {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+
+      span {
+        display: flex;
+        align-items: center;
+        background-color: #e1bee7; // Light purple for selected attendees
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+
+        button {
+          background: none;
+          border: none;
+          color: #6a1b9a; // Primary color
+          margin-left: 5px;
+          cursor: pointer;
+          font-weight: bold;
+
+          &:hover {
+            color: #4a148c; // Darker shade on hover
+          }
+        }
+
+        &:hover {
+          background-color: #d1c4e9; // Slightly darker shade on hover
+        }
+      }
+    }
+
+    .btn {
+      padding: 10px 15px;
+      background-color: #6a1b9a; // Primary color
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: #4a148c; // Darker shade on hover
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    padding: 15px;
+    h2 {
+      font-size: 20px;
+    }
+
+    .form-group {
+      input,
+      textarea {
+        font-size: 14px;
+      }
+    }
+
+    .btn {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    padding: 10px;
+    h2 {
+      font-size: 18px;
+    }
+
+    .form-group {
+      input,
+      textarea {
+        font-size: 12px;
+      }
+    }
+
+    .btn {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+
+  // Animations
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.mat-snack-bar-container {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+// .add-meeting {
+//   max-width: 800px;
+//   margin: 0 auto;
+//   padding: 20px;
+//   background-color: #fff; // Light background for the form
+//   border-radius: 8px;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   animation: fadeIn 0.5s ease-out;
+//   overflow-y: auto; // Allow scrolling when content overflows
+//   max-height: 70vh; // Limit the form's height to 90% of the viewport height
+
+//   h2 {
+//     text-align: center;
+//     color: #6a1b9a; // Primary color
+//     margin-bottom: 20px;
+//     font-size: 24px;
+//     font-weight: 600;
+//     animation: slideIn 1s ease-out;
+//   }
+
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     overflow-y: auto; // Enable scrolling within the form
+//     padding-right: 10px; // Ensure scrollbar doesn't hide content
+
+//     .form-group {
+//       display: flex;
+//       flex-direction: column;
+
+//       label {
+//         font-weight: bold;
+//         margin-bottom: 8px;
+//         color: #333;
+//         transition: color 0.3s;
+
+//         &:hover {
+//           color: #6a1b9a; // Highlight on hover
+//         }
+//       }
+
+//       input,
+//       textarea {
+//         padding: 10px;
+//         border: 1px solid #ccc;
+//         border-radius: 4px;
+//         font-size: 16px;
+//         outline: none;
+//         transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+//         &:focus {
+//           border-color: #6a1b9a; // Highlight on focus
+//           box-shadow: 0 0 5px rgba(106, 27, 154, 0.2);
+//         }
+
+//         &::placeholder {
+//           color: #aaa;
+//         }
+//       }
+
+//       textarea {
+//         resize: none;
+//         min-height: 80px;
+//       }
+//     }
+
+//     .dropdown {
+//       position: relative;
+//       max-height: 150px; // Set maximum height
+//       overflow-y: auto; // Enable scrolling
+//       border: 1px solid #ddd;
+//       border-radius: 4px;
+//       padding: 8px;
+//       margin-top: 8px;
+//       background: #fafafa;
+//       transition: max-height 0.3s ease, background-color 0.3s;
+
+//       li {
+//         padding: 10px;
+//         cursor: pointer;
+//         border-bottom: 1px solid #eee;
+//         transition: background-color 0.3s ease;
+
+//         &:hover {
+//           background-color: #f0f0f0;
+//         }
+
+//         &:last-child {
+//           border-bottom: none;
+//         }
+//       }
+//     }
+
+//     .selected-attendees {
+//       display: flex;
+//       flex-wrap: wrap;
+//       gap: 8px;
+//       margin-top: 8px;
+
+//       span {
+//         display: flex;
+//         align-items: center;
+//         background-color: #e1bee7; // Light purple for selected attendees
+//         padding: 5px 10px;
+//         border-radius: 12px;
+//         font-size: 14px;
+//         transition: background-color 0.3s ease;
+
+//         button {
+//           background: none;
+//           border: none;
+//           color: #6a1b9a; // Primary color
+//           margin-left: 5px;
+//           cursor: pointer;
+//           font-weight: bold;
+
+//           &:hover {
+//             color: #4a148c; // Darker shade on hover
+//           }
+//         }
+
+//         &:hover {
+//           background-color: #d1c4e9; // Slightly darker shade on hover
+//         }
+//       }
+//     }
+
+//     .btn {
+//       padding: 10px 15px;
+//       background-color: #6a1b9a; // Primary color
+//       color: #fff;
+//       font-size: 16px;
+//       font-weight: bold;
+//       border: none;
+//       border-radius: 4px;
+//       cursor: pointer;
+//       transition: background-color 0.3s ease, transform 0.3s ease;
+
+//       &:hover {
+//         background-color: #4a148c; // Darker shade on hover
+//         transform: translateY(-2px);
+//       }
+
+//       &:active {
+//         transform: translateY(2px);
+//       }
+
+//       &:disabled {
+//         background-color: #ccc;
+//         cursor: not-allowed;
+//       }
+//     }
+//   }
+
+//   // Responsive styles
+//   @media (max-width: 768px) {
+//     padding: 15px;
+//     h2 {
+//       font-size: 20px;
+//     }
+
+//     .form-group {
+//       input,
+//       textarea {
+//         font-size: 14px;
+//       }
+//     }
+
+//     .btn {
+//       font-size: 14px;
+//       padding: 8px 12px;
+//     }
+//   }
+
+//   @media (max-width: 480px) {
+//     max-width: 100%;
+//     padding: 10px;
+//     h2 {
+//       font-size: 18px;
+//     }
+
+//     .form-group {
+//       input,
+//       textarea {
+//         font-size: 12px;
+//       }
+//     }
+
+//     .btn {
+//       font-size: 12px;
+//       padding: 6px 10px;
+//     }
+//   }
+
+//   // Animations
+//   @keyframes fadeIn {
+//     from {
+//       opacity: 0;
+//     }
+//     to {
+//       opacity: 1;
+//     }
+//   }
+
+//   @keyframes slideIn {
+//     from {
+//       transform: translateY(-20px);
+//       opacity: 0;
+//     }
+//     to {
+//       transform: translateY(0);
+//       opacity: 1;
+//     }
+//   }
+// }

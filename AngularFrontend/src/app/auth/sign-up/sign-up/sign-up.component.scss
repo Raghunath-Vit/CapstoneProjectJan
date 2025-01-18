@@ -1,0 +1,235 @@
+
+
+
+
+
+.signup-container {
+  width: 110%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #6a1b9a; // Primary color
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input {
+      width: 90%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #6a1b9a;
+        outline: none;
+        box-shadow: 0 0 4px rgba(106, 27, 154, 0.3); // Subtle purple glow
+      }
+    }
+
+    small {
+      color: #f44336; // Error color
+      font-size: 0.8rem;
+      margin-top: -0.3rem;
+    }
+
+    button {
+      padding: 0.7rem;
+      background: #6a1b9a; // Primary color
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#6a1b9a, 10%);
+      }
+
+      &:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .switch-auth {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+
+    p {
+      margin: 0;
+
+      a {
+        color: #6a1b9a; // Link color
+        font-weight: bold;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: darken(#6a1b9a, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Animation for fade-in effect
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    button {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+
+
+// Login Container
+// .login-container {
+//   width: 110%;
+//   max-width: 400px;
+//   margin: auto;
+//   padding: 2rem;
+//   background: #fff;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+//   animation: fadeIn 0.8s ease-in-out;
+
+//   h2 {
+//     text-align: center;
+//     margin-bottom: 1.5rem;
+//     color: #6a1b9a; // Primary color
+//     font-weight: bold;
+//   }
+
+//   form {
+//     display: flex;
+//     flex-direction: column;
+
+//     label {
+//       margin-bottom: 0.5rem;
+//       font-weight: bold;
+//       color: #555;
+//     }
+
+//     input {
+//       padding: 0.75rem;
+//       margin-bottom: 1.2rem;
+//       border: 1px solid #ddd;
+//       border-radius: 4px;
+//       font-size: 1rem;
+//       transition: all 0.3s ease;
+
+//       &:focus {
+//         border-color: #6a1b9a;
+//         outline: none;
+//         box-shadow: 0 0 5px #d1c4e9;
+//       }
+//     }
+
+//     small {
+//       color: #f44336; // Error color
+//       font-size: 0.875rem;
+//     }
+
+//     button {
+//       padding: 0.8rem;
+//       background: #6a1b9a; // Primary color
+//       color: #fff;
+//       border: none;
+//       border-radius: 4px;
+//       cursor: pointer;
+//       font-size: 1rem;
+//       font-weight: bold;
+//       transition: background-color 0.3s ease;
+
+//       &:hover {
+//         background: darken(#6a1b9a, 10%);
+//       }
+
+//       &:disabled {
+//         background: #ccc;
+//         cursor: not-allowed;
+//       }
+//     }
+//   }
+
+//   .error-message {
+//     margin-top: 1rem;
+//     color: #f44336; // Error color
+//     text-align: center;
+//     font-size: 0.9rem;
+//   }
+
+//   p {
+//     margin-top: 1rem;
+//     text-align: center;
+//     font-size: 0.9rem;
+
+//     a {
+//       color: #6a1b9a;
+//       font-weight: bold;
+//       text-decoration: underline;
+//       transition: color 0.3s ease;
+
+//       &:hover {
+//         color: darken(#6a1b9a, 10%);
+//       }
+//     }
+//   }
+// }
+
+// // Keyframes for fade-in animation
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(-10%);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
